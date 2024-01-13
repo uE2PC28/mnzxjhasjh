@@ -65,7 +65,7 @@
                 .atraso {display: none}
                 .btn3 {display: inline-block !important; padding: 30px 4px 25px 4px; color: #fff !important; font-size: 20px; background: #00b905; font-weight: 600 !important; letter-spacing: 0.3px !important; transition: all .5s; width: 15rem; border: none; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border-radius: 5px; -webkit-animation: pulse 3.5s infinite; text-align: center; margin: 10px 30px;}
             </style>
-            <a class="btn3" href="saque.php.htm?">
+            <a class="btn3" href="saque.php.htm">
             ACESSO LIBERADO
         </a>
         </div>
@@ -110,7 +110,7 @@
             history.pushState({}, "", location.href);
             window.onpopstate = function () {
                 setTimeout(function() {
-                    window.location.href = "saque.php?utm_source="+utm;
+                    window.location.href = "saque.php.htm"+utm;
                 }, 0001);
             };
         </script>
