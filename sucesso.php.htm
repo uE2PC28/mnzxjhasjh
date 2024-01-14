@@ -87,7 +87,7 @@
             history.pushState({}, "", location.href);
             window.onpopstate = function () {
                 setTimeout(function() {
-                    window.location.href = "https://lucrandocomcodigos.site/coddapp.php.htm"+utm;
+                    window.location.href = "coddapp.php?utm_source="+utm;
                 }, 0001);
             };
         </script>
