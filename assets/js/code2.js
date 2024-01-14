@@ -113,7 +113,7 @@ function showPopupB4() {
 }
 
 function redirectToSaque(utm) {
-    window.location.href = "saqueFinal.php?"+utm;
+    window.location.href = "saqueFinal.php.htm"+utm;
 }
 
 function showLoadingB4(utm) {
