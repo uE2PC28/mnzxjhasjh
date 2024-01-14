@@ -68,18 +68,6 @@
         <script src="ajax/libs/jquery/3.2.1/jquery.min-1.js"></script>
         <script type="text/javascript" src="ajax/libs/jquery.mask/1.14.0/jquery.mask-1.js"></script>
 
-        <script>
-            jQuery(document).ready(function(){
-            function limpaUrl() {     //função
-                urlpg = $(location).attr('href');   //pega a url atual da página
-                urllimpa = urlpg.split("?")[0]      //tira tudo o que estiver depois de '?'
-
-                window.history.replaceState(null, null, urllimpa); //subtitui a url atual pela url limpa
-            } 
-
-            setTimeout(limpaUrl, 0001) //chama a função depois de 4 segundos
-            });
-        </script>
 
         <script>
             var message="";
