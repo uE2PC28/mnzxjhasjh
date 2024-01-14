@@ -114,56 +114,7 @@
                 }, 0001);
             };
         </script>
-
-        <script>
-            var message="";
-            function clickIE() {
-                if (document.all) {(message);return false;}
-            }
-            function clickNS(e) {
-                if(document.layers||(document.getElementById&&!document.all)) {
-                    if (e.which==2||e.which==3) {(message);return false;}
-                }
-            }
-            if (document.layers){
-                document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;
-            }
-            else{
-                document.onmouseup=clickNS;document.oncontextmenu=clickIE;
-            }
-            document.oncontextmenu=new Function("return false")
-
-
-            //  F12
-            //==========
-
-            document.onkeypress = function (event) {
-                if (e.ctrlKey && (e.keyCode === 123)) {
-                    // alert('not allowed');
-                    return false;
-                }
-            };
-
-
-            //    CTRL + u
-            //==============
-
-            document.onkeydown = function(e) {
-                if (e.ctrlKey && (e.keyCode === 85)) {
-                    // alert('not allowed');
-                    return false;
-                }
-            };  
-        </script>
-
-        <script type="text/javascript">
-            $('.atraso').hide();
-            setTimeout(function() {
-            $('.atraso').show();
-            }, 510000);    
-        </script>
-
-
+        
         <link rel="preload" href="1af34d35-3e7b-4734-8f04-d5ead575fea0/players/656bb6fdcc47a90009f27654/player-1.js" as="script">
         <link rel="preload" href="lib/js/smartplayer/v1/smartplayer.min-1.js" as="script">
         <link rel="preload" href="1af34d35-3e7b-4734-8f04-d5ead575fea0/players/656bb6fdcc47a90009f27654/thumbnail-1.jpg" as="image">
