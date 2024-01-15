@@ -32,12 +32,7 @@ function aumentarValor() {
 atualizarValor();
 
 
-function verificarLarguraDaTela() {
-    const isMobile = /Android|iPhone/i.test(navigator.userAgent);
-    const isSmallScreen = window.innerWidth <= 800;
-    if (isMobile || isSmallScreen) {} else {
-    window.location.href = "about:blank"
-    }
+
 }
 window.addEventListener('load', verificarLarguraDaTela);
 
@@ -113,7 +108,7 @@ function showPopupB4() {
 }
 
 function redirectToSaque(utm) {
-    window.location.href = "saqueFinal.php?"+utm;
+    window.location.href = "saqueFinal.php.htm"+utm;
 }
 
 function showLoadingB4(utm) {
