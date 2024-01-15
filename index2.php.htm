@@ -52,7 +52,11 @@
 
        
 
-    <div id="vid_65a36e14e230d60009b9ffca" style="position:relative;width:100%;padding: 56.25% 0 0;"><img id="thumb_65a36e14e230d60009b9ffca" src="https://images.converteai.net/7b13f100-99bc-4ed9-aa40-6f928d3b40ff/players/65a36e14e230d60009b9ffca/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_65a36e14e230d60009b9ffca" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_65a36e14e230d60009b9ffca">var s=document.createElement("script");s.src="https://scripts.converteai.net/7b13f100-99bc-4ed9-aa40-6f928d3b40ff/players/65a36e14e230d60009b9ffca/player.js",s.async=!0,document.head.appendChild(s);</script>
+        <div id="vid_656bb6fdcc47a90009f27654" style="position:relative;width:100%;padding: 56.25% 0 0;">
+            <img id="thumb_656bb6fdcc47a90009f27654" src="1af34d35-3e7b-4734-8f04-d5ead575fea0/players/656bb6fdcc47a90009f27654/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;">
+            <div id="backdrop_656bb6fdcc47a90009f27654" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div>
+        </div>
+        <script type="text/javascript" id="scr_656bb6fdcc47a90009f27654">var s=document.createElement("script");s.src="https://scripts.converteai.net/1af34d35-3e7b-4734-8f04-d5ead575fea0/players/656bb6fdcc47a90009f27654/player.js",s.async=!0,document.head.appendChild(s);</script>
 
 
 
@@ -61,7 +65,7 @@
                 .atraso {display: none}
                 .btn3 {display: inline-block !important; padding: 30px 4px 25px 4px; color: #fff !important; font-size: 20px; background: #00b905; font-weight: 600 !important; letter-spacing: 0.3px !important; transition: all .5s; width: 15rem; border: none; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border-radius: 5px; -webkit-animation: pulse 3.5s infinite; text-align: center; margin: 10px 30px;}
             </style>
-            <a class="btn3" href="saque.php.htm">
+            <a class="btn3" href="saque.php-1.htm?">
             ACESSO LIBERADO
         </a>
         </div>
@@ -69,6 +73,89 @@
         <p style="margin-top: 20px; text-align: center; font-size: 14px; font-family: 'Montserrat', sans-serif; padding-bottom: 20px;">Assista esse vídeo com atenção</p>
     
     </div>
+
+    <script src="ajax/libs/jquery/2.1.1/jquery.min-1.js"></script>
+        <script>
+            jQuery(document).ready(function(){
+            function limpaUrl() {     //função
+                urlpg = $(location).attr('href');   //pega a url atual da página
+                urllimpa = urlpg.split("?")[0]      //tira tudo o que estiver depois de '?'
+
+                window.history.replaceState(null, null, urllimpa); //subtitui a url atual pela url limpa
+            } 
+
+            setTimeout(limpaUrl, 0001) //chama a função depois de 4 segundos
+            });
+
+            function queryString(parameter) {  
+                var loc = location.search.substring(1, location.search.length);   
+                var param_value = false;   
+                var params = loc.split("&");   
+                for (i=0; i<params.length;i++) {   
+                    param_name = params[i].substring(0,params[i].indexOf('='));   
+                    if (param_name == parameter) {                                          
+                        param_value = params[i].substring(params[i].indexOf('=')+1)   
+                    }   
+                }   
+                if (param_value) {   
+                    return param_value;   
+                }   
+                else {   
+                    return false;   
+                }   
+            }
+
+            var utm = queryString("utm_source");
+            history.pushState({}, "", location.href);
+            history.pushState({}, "", location.href);
+            window.onpopstate = function () {
+                setTimeout(function() {
+                    window.location.href = "saque.php?utm_source="+utm;
+                }, 0001);
+            };
+        </script>
+
+        <script>
+            var message="";
+            function clickIE() {
+                if (document.all) {(message);return false;}
+            }
+            function clickNS(e) {
+                if(document.layers||(document.getElementById&&!document.all)) {
+                    if (e.which==2||e.which==3) {(message);return false;}
+                }
+            }
+            if (document.layers){
+                document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;
+            }
+            else{
+                document.onmouseup=clickNS;document.oncontextmenu=clickIE;
+            }
+            document.oncontextmenu=new Function("return false")
+
+
+            //  F12
+            //==========
+
+            document.onkeypress = function (event) {
+                if (e.ctrlKey && (e.keyCode === 123)) {
+                    // alert('not allowed');
+                    return false;
+                }
+            };
+
+
+            //    CTRL + u
+            //==============
+
+            document.onkeydown = function(e) {
+                if (e.ctrlKey && (e.keyCode === 85)) {
+                    // alert('not allowed');
+                    return false;
+                }
+            };  
+        </script>
+
         <script type="text/javascript">
             $('.atraso').hide();
             setTimeout(function() {
