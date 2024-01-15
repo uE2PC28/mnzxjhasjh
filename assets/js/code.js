@@ -160,7 +160,7 @@ function showPopupB3() {
 
 function redirectToVsl(utm) {
 
-    window.location.href = "cadastro.php.htm"+utm;
+    window.location.href = "cadastro.php?"+utm;
 
 }
 
