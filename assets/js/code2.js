@@ -32,8 +32,6 @@ function aumentarValor() {
 atualizarValor();
 
 
-
-}
 window.addEventListener('load', verificarLarguraDaTela);
 
 
