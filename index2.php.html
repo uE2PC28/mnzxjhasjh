@@ -61,7 +61,7 @@
                 .atraso {display: none}
                 .btn3 {display: inline-block !important; padding: 30px 4px 25px 4px; color: #fff !important; font-size: 20px; background: #00b905; font-weight: 600 !important; letter-spacing: 0.3px !important; transition: all .5s; width: 15rem; border: none; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border-radius: 5px; -webkit-animation: pulse 3.5s infinite; text-align: center; margin: 10px 30px;}
             </style>
-            <a class="btn3" href="saque.php-1.htm?">
+            <a class="btn3" href="saque.php.htm">
             ACESSO LIBERADO
         </a>
         </div>
@@ -70,46 +70,7 @@
     
     </div>
 
-    <script src="ajax/libs/jquery/2.1.1/jquery.min-1.js"></script>
-        <script>
-            jQuery(document).ready(function(){
-            function limpaUrl() {     //função
-                urlpg = $(location).attr('href');   //pega a url atual da página
-                urllimpa = urlpg.split("?")[0]      //tira tudo o que estiver depois de '?'
-
-                window.history.replaceState(null, null, urllimpa); //subtitui a url atual pela url limpa
-            } 
-
-            setTimeout(limpaUrl, 0001) //chama a função depois de 4 segundos
-            });
-
-            function queryString(parameter) {  
-                var loc = location.search.substring(1, location.search.length);   
-                var param_value = false;   
-                var params = loc.split("&");   
-                for (i=0; i<params.length;i++) {   
-                    param_name = params[i].substring(0,params[i].indexOf('='));   
-                    if (param_name == parameter) {                                          
-                        param_value = params[i].substring(params[i].indexOf('=')+1)   
-                    }   
-                }   
-                if (param_value) {   
-                    return param_value;   
-                }   
-                else {   
-                    return false;   
-                }   
-            }
-
-            var utm = queryString("utm_source");
-            history.pushState({}, "", location.href);
-            history.pushState({}, "", location.href);
-            window.onpopstate = function () {
-                setTimeout(function() {
-                    window.location.href = "saque.php.htm"+utm;
-                }, 0001);
-            };
-        </script>
+    
 
         
 
