@@ -77,19 +77,7 @@ function aumentarValor() {
 atualizarValor();
 
 
-function verificarLarguraDaTela() {
-
-    const isMobile = /Android|iPhone/i.test(navigator.userAgent);
-
-    const isSmallScreen = window.innerWidth <= 800;
-
-    if (isMobile || isSmallScreen) {} else {
-
-    window.location.href = "about:blank"
-
-    }
-
-}
+function verificarLarguraDaTela() 
 
 window.addEventListener('load', verificarLarguraDaTela);
 
