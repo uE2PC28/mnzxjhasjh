@@ -6,71 +6,182 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link data-optimized="1" rel="stylesheet" href="assets/css/5921624bf5bbe4c8c091ef09226fa76f-3.css">
+        <link data-optimized="1" rel="stylesheet" href="assets/css/5921624bf5bbe4c8c091ef09226fa76f.css">
         <link rel="preconnect" href="https://fonts.googleapis.com/">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-        <link data-optimized="1" href="assets/css/1c7a3d2ee9759dc256d915300855c494-3.css" rel="stylesheet">
-        <link data-optimized="1" href="assets/css/ba9cbbe9240a489628be8eb27c56db8a-3.css" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/style-3.css">
-        <link rel="stylesheet" href="assets/css/animated-3.css">
+        <link data-optimized="1" href="assets/css/1c7a3d2ee9759dc256d915300855c494.css" rel="stylesheet">
+        <link data-optimized="1" href="assets/css/ba9cbbe9240a489628be8eb27c56db8a.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/animated.css">
         <title>Codigos Lucrativos</title>
+
+        <!-- Meta Pixel Code -->
+            <script>
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '905287817650292');
+            fbq('track', 'PageView');
+            </script>
+            <noscript><img height="1" width="1" style="display:none" src="tr?id=905287817650292&ev=PageView&noscript=1"></noscript>
+        <!-- End Meta Pixel Code -->
     </head>
-<body>
-    <div class="menu">
 
-        <a>
+    <body>
 
-            <img src="assets/images/logo-3.png">
+        <div class="menu">
+            <a><img src="assets/images/logo.png"></a>
+            <div class="buttons-container">
+                <div class="valor-box">
+                    <span id="valor" style="font-family: 'Montserrat', sans-serif;">R$ 0.00</span>
+                </div>
+            </div>
+        </div>
 
-        </a>
+        <div style="margin-bottom: 100px;"></div>
 
-        <div class="buttons-container">
 
-            <div class="valor-box">
+        <div id="p1" style="display: block;">
+            <div class="slogan-inicio">
+                <div>
+                    <p style="color: white; font-weight: bold; font-size: 20px; padding-top: 15px;">Você ganhou um teste grátis!</p>
+                </div>
+            </div>
 
-            <span id="valor" style="font-family: 'Montserrat', sans-serif;">R$ 270.00</span>
+            <div style="margin-bottom: 20px;"></div>
 
+            <div class="white-box">
+                <img src="assets/images/amazon.png" style="width: 150px; margin: 0 auto; display: flex; padding-top: 10px;">
+                <div id="codigoGerado" style="display: block;">
+                    <p style="margin-top: 20px; text-align: center; ">Código gerado abaixo:</p>
+                    <p id="codigoAleatorio" style="font-weight: bold; margin-top: -15px; text-align: center; margin-bottom: -10px; font-size: 25px;"></p>
+                </div>
+                <form id="pythonGenerator" style="padding-top: 20px;" onsubmit="document.getElementById('submit').disabled = true;">
+                    <label style="background-color: #e2e8ef; padding: 10px; border-radius: 12px; text-align: center; width: 100%; margin-bottom: 10px; line-height: 1.3rem;">Para confirmar que você é um <b>HUMANO</b> escolha abaixo qual desses códigos é o seu que foi <b>gerado!</b></label>
+                    <div class="row">
+                        <label style="margin-left: 10px;">
+                            <input type="checkbox" name="" id="chatId" name="chatId">
+                            <div class="icon-box">
+                                <i class="fa fa-book" aria-hidden="true"></i>
+                                <span id="codigoAleatorioCerto">TESTE1</span>
+                            </div>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="" id="chatId" name="chatId">
+                            <div class="icon-box">
+                                <i class="fa fa-book" aria-hidden="true"></i>
+                                <span id="codigoAleatorioErrado">TESTE1</span>
+                            </div>
+                        </label>
+                    </div>
+                    <input type="submit" value="Enviar" id="submit" class="enviarCodigo" id="B1" onclick="this.disabled = true; showLoadingB1(); return false;">
+                </form>
+            </div>
+
+            <div class="popup-container" id="popupB1">
+                <script data-optimized="1" src="assets/js/c53f77ae20425ecce9172a7e108fa681.js"></script>
+                <lord-icon src="assets/json/xzksbhzh.json" trigger="loop" delay="1000" colors="primary:#08a88a,secondary:#ebe6ef" style="width:125px;height:125px; display: flex; margin: 0 auto;"></lord-icon>
+                <span class="popup-text" style="font-size: 20px;">Saldo atualizado!</span>
+                <span class="popup-text" style="font-size: 20px;">Você recebeu:</span>
+                <span class="popup-text" style="font-size: 40px; font-weight: bold; font-family: 'Montserrat', sans-serif; margin-top: -20px;">R$ 69,00</span>
+                <span class="popup-text" style="font-size: 20px;">pelo código da Amazon</span>
+            </div>
+        </div>
+
+
+
+        <div id="p2" style="display: none;">
+
+            <div class="white-box">
+                <img decoding="async" src="assets/images/nike.png" style="width: 150px; margin: 0 auto; display: flex; padding-top: 10px;">
+                <div id="codigoGerado2" style="display: none;">
+                    <p style="margin-top: 20px; text-align: center; ">Código gerado com sucesso:</p>
+                    <p id="codigoAleatorio2" style="font-weight: bold; margin-top: -15px; text-align: center; margin-bottom: -10px; font-size: 25px;"></p>
+                </div>
+                <form id="pythonGenerator" style="padding-top: 20px;" onsubmit="document.getElementById('submit').disabled = true;">
+                <label style="background-color: #e2e8ef; padding: 10px; border-radius: 12px; text-align: center; width: 100%; margin-bottom: 10px; line-height: 1.3rem;">Para confirmar que você é um <b>HUMANO</b> escolha abaixo qual desses códigos é o seu que foi <b>gerado!</b></label>
+                    <div class="row">
+                        <label style="margin-left: 10px;">
+                            <input type="checkbox" name="" id="chatId" name="chatId">
+                            <div class="icon-box">
+                                <i class="fa fa-book" aria-hidden="true"></i>
+                                <span id="codigoAleatorioErrado2">TESTE1</span>
+                            </div>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="" id="chatId" name="chatId">
+                            <div class="icon-box">
+                                <i class="fa fa-book" aria-hidden="true"></i>
+                                <span id="codigoAleatorioCerto2">TESTE1</span>
+                            </div>
+                        </label>
+                    </div>
+                    <input type="submit" id="submit" value="Enviar" class="enviarCodigo" id="B2" onclick="this.disabled = true; showLoadingB2(); return false;">
+                </form>
+            </div>
+
+            <div class="popup-container" id="popupB2">
+                <script data-optimized="1" src="assets/js/c53f77ae20425ecce9172a7e108fa681.js"></script>
+                <lord-icon src="assets/json/xzksbhzh.json" trigger="loop" delay="1000" colors="primary:#08a88a,secondary:#ebe6ef" style="width:125px;height:125px; display: flex; margin: 0 auto;"></lord-icon>
+                <span class="popup-text" style="font-size: 20px;">Saldo atualizado!</span>
+                <span class="popup-text" style="font-size: 20px;">Você recebeu:</span>
+                <span class="popup-text" style="font-size: 40px; font-weight: bold; font-family: 'Montserrat', sans-serif; margin-top: -20px;">R$ 69,00</span>
+                <span class="popup-text" style="font-size: 20px;">pelo código da Nike</span>
             </div>
 
         </div>
 
-    </div>
-
-    <div style="margin-bottom: 100px;"></div>
-
-    <div class="vsl">
-
-    <p style="padding-top: 20px; text-align: center; font-size: 18px; font-family: 'Montserrat', sans-serif;">Ganhe de <span style="font-weight: bold; color: #28a745; font-size: 22px;">R$80</span> a  <span style="font-weight: bold; color: #28a745; font-size: 22px;">R$270</span> por dia</p>
-
-    <p style="margin-top: -15px; margin-bottom: 20px; text-align: center; font-size: 18px; font-family: 'Montserrat', sans-serif;">
-
-        com essa nova função do Google
-
-    </p>
-
-       
-
-       
-
-        <div id="vid_65a36e14e230d60009b9ffca" style="position:relative;width:100%;padding: 56.25% 0 0;"><img id="thumb_65a36e14e230d60009b9ffca" src="https://images.converteai.net/7b13f100-99bc-4ed9-aa40-6f928d3b40ff/players/65a36e14e230d60009b9ffca/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_65a36e14e230d60009b9ffca" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_65a36e14e230d60009b9ffca">var s=document.createElement("script");s.src="https://scripts.converteai.net/7b13f100-99bc-4ed9-aa40-6f928d3b40ff/players/65a36e14e230d60009b9ffca/player.js",s.async=!0,document.head.appendChild(s);</script>
 
 
+        <div id="p3" style="display: none;">
 
-        <div class="atraso" style="margin: 38px;">
-            <style>
-                .atraso {display: none}
-                .btn3 {display: inline-block !important; padding: 30px 4px 25px 4px; color: #fff !important; font-size: 20px; background: #00b905; font-weight: 600 !important; letter-spacing: 0.3px !important; transition: all .5s; width: 15rem; border: none; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border-radius: 5px; -webkit-animation: pulse 3.5s infinite; text-align: center; margin: 10px 30px;}
-            </style>
-            <a class="btn3" href="https://go.zippify.com.br/jvbl9">
-            ACESSO LIBERADO
-        </a>
+            <div class="white-box">
+                <img decoding="async" src="assets/images/apple.png" style="width: 150px; margin: 0 auto; display: flex; padding-top: 10px;">
+                <div id="codigoGerado3" style="display: none;">
+                    <p style="margin-top: 20px; text-align: center; ">Código gerado com sucesso:</p>
+                    <p id="codigoAleatorio3" style="font-weight: bold; margin-top: -15px; text-align: center; margin-bottom: -10px; font-size: 25px;"></p>
+                </div>
+
+                <form id="pythonGenerator" style="padding-top: 20px;" onsubmit="document.getElementById('submit').disabled = true;">
+                <label style="background-color: #e2e8ef; padding: 10px; border-radius: 12px; text-align: center; width: 100%; margin-bottom: 10px; line-height: 1.3rem;">Para confirmar que você é um <b>HUMANO</b> escolha abaixo qual desses códigos é o seu que foi <b>gerado!</b></label>
+                    <div class="row">
+                        <label style="margin-left: 10px;">
+                            <input type="checkbox" name="" id="chatId" name="chatId">
+                            <div class="icon-box">
+                                <i class="fa fa-book" aria-hidden="true"></i>
+                                <span id="codigoAleatorioCerto3">TESTE1</span>
+                            </div>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="" id="chatId" name="chatId">
+                            <div class="icon-box">
+                                <i class="fa fa-book" aria-hidden="true"></i>
+                                <span id="codigoAleatorioErrado3">TESTE1</span>
+                            </div>
+                        </label>
+                    </div>
+                    <input type="submit" id="submit" value="Enviar" class="enviarCodigo" id="B3" onclick="this.disabled = true; showLoadingB3(''); return false;">
+                </form>
+            </div>
+
+            <div class="popup-container" id="popupB3">
+                <script data-optimized="1" src="assets/js/c53f77ae20425ecce9172a7e108fa681.js"></script>
+                <lord-icon src="assets/json/xzksbhzh.json" trigger="loop" delay="1000" colors="primary:#08a88a,secondary:#ebe6ef" style="width:125px;height:125px; display: flex; margin: 0 auto;"></lord-icon>
+                <span class="popup-text" style="font-size: 20px;">Saldo atualizado!</span>
+                <span class="popup-text" style="font-size: 20px;">Você recebeu:</span>
+                <span class="popup-text" style="font-size: 40px; font-weight: bold; font-family: 'Montserrat', sans-serif; margin-top: -20px;">R$ 69,00</span>
+                <span class="popup-text" style="font-size: 20px;">pelo código da Apple</span>
+            </div>
+
         </div>
-    
-        <p style="margin-top: 20px; text-align: center; font-size: 14px; font-family: 'Montserrat', sans-serif; padding-bottom: 20px;">Assista esse vídeo com atenção</p>
-    
-    </div>
 
-    <script src="ajax/libs/jquery/2.1.1/jquery.min-1.js"></script>
+        <script src="ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="assets/js/code.js"></script>
         <script>
             jQuery(document).ready(function(){
             function limpaUrl() {     //função
@@ -106,7 +217,7 @@
             history.pushState({}, "", location.href);
             window.onpopstate = function () {
                 setTimeout(function() {
-                    window.location.href = "https://go.zippify.com.br/jvbl9"+utm;
+                    window.location.href = "cadastro.php?utm_source="+utm;
                 }, 0001);
             };
         </script>
@@ -152,24 +263,9 @@
             };  
         </script>
 
-        <script type="text/javascript">
-            $('.atraso').hide();
-            setTimeout(function() {
-            $('.atraso').show();
-            }, 510000);    
-        </script>
-
-
-        <link rel="preload" href="1af34d35-3e7b-4734-8f04-d5ead575fea0/players/656bb6fdcc47a90009f27654/player.js" as="script">
-        <link rel="preload" href="lib/js/smartplayer/v1/smartplayer.min.js" as="script">
-        <link rel="preload" href="1af34d35-3e7b-4734-8f04-d5ead575fea0/players/656bb6fdcc47a90009f27654/thumbnail.jpg" as="image">
-        <link rel="preload" href="1af34d35-3e7b-4734-8f04-d5ead575fea0/656bb6c21413370009d9ee24/main.m3u8" as="fetch">
-        <link rel="dns-prefetch" href="https://cdn.converteai.net">
-        <link rel="dns-prefetch" href="https://scripts.converteai.net">
-        <link rel="dns-prefetch" href="https://images.converteai.net">
-        <link rel="dns-prefetch" href="https://api.vturb.com.br">
-
     </body>
+
+
 
     <footer>
         <p style="color: #ffffff; text-align: center; font-size: 12px; margin-top: 10px;">©️ 2023 Todos os direitos reservados.</p>
