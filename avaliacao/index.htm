@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="../jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="icon" href="assets/images/favico.jpg" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favico.jpg">
+    <script src="assets/js/date.js"></script>
+    <title>Opini</title>
+</head>
+<body>
+    <header>
+        <i class="fa-solid fa-bars"></i>
+        <!-- <img src="assets/images/google_logo.svg" alt=""> -->
+        <img src="assets/images/opinilogo.png" alt="">
+        <span id="saldo" style="margin-left: auto;">R$25,00</span>
+    </header>
+    <main>
+        <div class="main__saldo">
+            <p>SEU SALDO</p>
+            <p>R$25,00</p>
+        </div>
+        <div class="main__descricao">
+            <p>Seu crédito de R$25,00 expira hoje, <span id="todayDate"></span>.</p>
+            <p>Faça 3 avaliações e realize seu primeiro saque!</p>
+            <p>MINHAS TAREFAS</p>
+        </div>
+        <div class="card apresentacao">
+            <h2>PARA SACAR É SÓ COMEÇAR A AVALIAR</h2>
+            <p>Você acaba de ganhar 1 licença gratuita para avaliar as empresas cadastradas e parceiras do Google! <strong>Aproveite, você já ganhou R$25,00!</strong></p>
+            <a href="etapa2.html.htm"><button>COMEÇAR</button></a>
+        </div>
+    </main>
+    <footer>
+    </footer>
+        <script type="text/javascript" src="../ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+<script>
+    var url_domain = window.location.hostname;
+        console.log(url_domain);
+            // console.log(result);
+            var utm_term = undefined;
+        
+            var url_string = window.location.href
+            var url = new URL(url_string);
+            var utm_campaign_value = url.searchParams.get("utm_campaign");
+            var url_domain = window.location.hostname;
+
+            if(utm_term == undefined){
+                var utm_campaign = "xcon="+utm_campaign_value;
+            }
+            function setUrlParams2(el) {
+            var term = utm_campaign;
+               if (el.href.indexOf('#') == -1) {
+                     var src = "";
+                    var querystring = location.search
+                    var querystring_without_int_mark = querystring.split("?", 2)[1]
+
+                    var existsUrl = el.href;
+                    var existsquerystring = existsUrl.split("?", 2)[1]
+
+                    // console.log(querystring_without_int_mark, existsquerystring)
+
+                    if (existsquerystring === undefined && querystring_without_int_mark !== undefined) {
+                        el.href = existsUrl.split("?", 2)[0] + '?' + querystring_without_int_mark+"&"+utm_campaign;
+                        return;
+                    }
+                    if (existsquerystring !== undefined && querystring_without_int_mark !== undefined) {
+                        el.href = existsUrl.split("?", 2)[0] + '?' + existsquerystring + '&' + querystring_without_int_mark+"&"+utm_campaign;
+                        return;
+                    }
+
+                    if (querystring_without_int_mark !== undefined) {
+                        el.href = existsUrl.split("?", 2)[0] + '?' + existsquerystring + '&' + querystring_without_int_mark+"&"+utm_campaign;
+                    }
+                    if (querystring_without_int_mark == undefined && existsquerystring == undefined) {
+                        el.href = existsUrl;
+                    }
+                    if (existsquerystring !== undefined) {
+                        el.href = existsUrl;
+                    }
+
+                    console.log('url: '+existsUrl)
+                }
+            }
+            var links = document.querySelectorAll('a');
+
+            links.forEach(setUrlParams2);
+
+
+</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1408224733384734');
+fbq('track', 'PageView'); fbq('track', 'ViewContent');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="../tr?id=1408224733384734&ev=PageView&noscript=1"></noscript>
+<!-- End Meta Pixel Code -->
+</body>
+</html>
