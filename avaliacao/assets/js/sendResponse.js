@@ -26,7 +26,7 @@ function nubank() {
     removeDiv('nubank');
     document.getElementById("bradesco").style.display = "block";
 
-    document.getElementById('saldo').innerHTML = 'R$50,00';
+    document.getElementById('saldo').innerHTML = 'R$100,00';
     scrollToTop();
 
     playAudio('assets/audio/cash.mp3');
@@ -36,7 +36,7 @@ function bradesco() {
     removeDiv('bradesco');
     document.getElementById("mcdonalds").style.display = "block";
 
-    document.getElementById('saldo').innerHTML = 'R$75,00';
+    document.getElementById('saldo').innerHTML = 'R$150,00';
     scrollToTop();
 
     playAudio('assets/audio/cash.mp3');
@@ -54,7 +54,7 @@ function mcdonalds() {
     removeDiv('mcdonalds');
     document.getElementById("finalizacao").style.display = "block";
 
-    document.getElementById('saldo').innerHTML = 'R$100,00';
+    document.getElementById('saldo').innerHTML = 'R$200,00';
     scrollToTop();
 
     playAudio('assets/audio/cash.mp3');
