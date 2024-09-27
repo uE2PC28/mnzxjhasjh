@@ -26,7 +26,7 @@ function nubank() {
     removeDiv('nubank');
     document.getElementById("bradesco").style.display = "block";
 
-    document.getElementById('saldo').innerHTML = 'R$142,50';
+    document.getElementById('saldo').innerHTML = 'R$100,00';
     scrollToTop();
 
 
@@ -36,7 +36,7 @@ function bradesco() {
     removeDiv('bradesco');
     document.getElementById("mcdonalds").style.display = "block";
 
-    document.getElementById('saldo').innerHTML = 'R$205,00';
+    document.getElementById('saldo').innerHTML = 'R$150,00';
     scrollToTop();
 
 
