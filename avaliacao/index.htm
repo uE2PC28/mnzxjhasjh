@@ -16,23 +16,55 @@
         <i class="fa-solid fa-bars"></i>
         <!-- <img src="assets/images/google_logo.svg" alt=""> -->
         <img src="assets/images/opinilogo.png" alt="">
-        <span id="saldo" style="margin-left: auto;">R$25,00</span>
+        <span id="saldo" style="margin-left: auto;">R$50,00</span>
     </header>
     <main>
-        <div class="main__saldo">
-            <p>SEU SALDO</p>
-            <p>R$25,00</p>
-        </div>
-        <div class="main__descricao">
-            <p>Seu crédito de R$25,00 expira hoje, <span id="todayDate"></span>.</p>
-            <p>Faça 3 avaliações e realize seu primeiro saque!</p>
-            <p>MINHAS TAREFAS</p>
-        </div>
-        <div class="card apresentacao">
-            <h2>PARA SACAR É SÓ COMEÇAR A AVALIAR</h2>
-            <p>Você acaba de ganhar 1 licença gratuita para avaliar as empresas cadastradas e parceiras do Google! <strong>Aproveite, você já ganhou R$25,00!</strong></p>
-            <a href="etapa2.html.htm"><button>COMEÇAR</button></a>
-        </div>
+        <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .main__saldo, .main__descricao, .card {
+            text-align: center;
+            margin: 20px 0;
+            width: 80%; /* Ajuste conforme necessário */
+        }
+        .card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+        }
+    </style>
+    <title>Seu Saldo</title>
+</head>
+<body>
+    <div class="main__saldo"> 
+        <p>SEU SALDO</p>
+        <p>R$50,00</p> 
+    </div>
+    <div class="main__descricao">
+        <p>Seu crédito de R$25,00 expira hoje<span id="todayDate"></span>.</p>
+        <p>Faça 3 avaliações e realize seu primeiro saque!</p>
+        <p>MINHAS TAREFAS</p> 
+    </div>
+    <div class="card apresentacao">
+        <h2>PARA SACAR É SÓ COMEÇAR A AVALIAR</h2>
+        <p>Você acaba de ganhar 1 licença gratuita para avaliar as empresas cadastradas e parceiras do Google! <strong>Aproveite, você já ganhou R$50,00!</strong></p>
+        <a href="etapa2.html.htm"><button>COMEÇAR</button></a>
+    </div>
+</body>
+</html>
+
     </main>
     <footer>
     </footer>
